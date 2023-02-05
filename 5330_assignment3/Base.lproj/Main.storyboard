@@ -63,6 +63,9 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="PNj-nh-2sg" secondAttribute="bottom" constant="50" id="xjf-yR-OjH"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
