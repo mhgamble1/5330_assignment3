@@ -10,9 +10,9 @@ import UIKit
 class ViewController: UIViewController {
     // create a CurrentTimer
     var CurrentTimer = Timer()
-    var Countdown = Timer()
-    // create a variable to hold the time remaining
-    var remaining = 0
+    var timer = Timer()
+    var count: Int = 60
+    var timerOn: Bool = false
 
     @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var TimeRemaining: UILabel!
@@ -48,11 +48,44 @@ class ViewController: UIViewController {
     }
 
     @IBAction func StartStopPressed(_ sender: Any) {
-        print("StartStopPressed")
+        if !timerOn {
+            timerOn = true
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        } else {
+            timer.invalidate()
+            timerOn = false
+            // set StartStopButton to "Stop Music"
+        }
+    }
+
+    @objc func timerCounter() -> Void {
+        if count == 0 {
+            timer.invalidate()
+            timerOn = false
+            print("play song")
+            // set StartStopButton to "Start Timer"
+            return
+        }
+        count = count - 1
+        let time = secondsToHoursMinutesSeconds(seconds: count)
+        let timeString = formatTime(hours: time.0, minutes: time.1, seconds: time.2)
+        TimeRemaining.text = timeString
+    }
+
+    // convert seconds to hours, minutes, and seconds
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+        return ((seconds / 3600), ((seconds % 3600) / 60), ((seconds % 3600) % 60))
+    }
+
+    // create a formatted string from the hours, minutes, and seconds like "01:23:45"
+    func formatTime(hours: Int, minutes: Int, seconds: Int) -> String {
+        return String(format: "Time Remaining: %02d:%02d:%02d", hours, minutes, seconds)
     }
 
     @IBAction func DPChanged(_ sender: Any) {
         print("DPChanged")
+        // set count to the value of the date picker
+        count = Int(DatePicker.countDownDuration)
     }
 }
 
