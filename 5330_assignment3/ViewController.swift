@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var count: Int = 60
     var timerOn: Bool = false
     var musicOn: Bool = false
+    var player: AVAudioPlayer?
 
     @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var TimeRemaining: UILabel!
@@ -54,7 +55,7 @@ class ViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         } else if !timerOn && musicOn{
             musicOn = false
-            player.stop()
+            timerOn = false
             StartStopButton.setTitle("Start Timer", for: .normal)
         } else {
             timer.invalidate()
@@ -68,8 +69,8 @@ class ViewController: UIViewController {
             timer.invalidate()
             timerOn = false
             print("play song")
+            StartStopButton.setTitle("Stop Music", for: .normal)
             musicOn = true
-            var player: AVAudioPlayer?
             guard let url = Bundle.main.url(forResource: "song", withExtension: "mp3") else { return }
 
             do {
