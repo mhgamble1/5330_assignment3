@@ -90,6 +90,8 @@
                     </view>
                     <connections>
                         <outlet property="DateTime" destination="8kd-M2-3dp" id="hBj-Hn-tu6"/>
+                        <outlet property="StartStopButton" destination="tBK-fu-ExG" id="Mhg-P5-qLq"/>
+                        <outlet property="TimeRemaining" destination="PNj-nh-2sg" id="Ho0-ip-Slf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

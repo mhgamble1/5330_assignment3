@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     // create a timer
     var timer = Timer()
 
+    @IBOutlet weak var TimeRemaining: UIStackView!
+    @IBOutlet weak var StartStopButton: UIButton!
     @IBOutlet weak var DateTime: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
