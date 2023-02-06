@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         } else {
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "night.jpg")!)
         }
+        print("hello")
     }
 
     func updateDateTime() {
@@ -44,6 +45,10 @@ class ViewController: UIViewController {
         // set the format to be like "Sun, 5 Feb 2023 12:34:56"
         formatter.dateFormat = "EEE, d MMM yyyy HH:mm:ss"
         DateTime.text = formatter.string(from: date)
+    }
+
+    @IBAction func StartStopPressed(_ sender: Any) {
+        print("StartStopPressed")
     }
 }
 

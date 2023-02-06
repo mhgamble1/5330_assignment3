@@ -55,6 +55,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Start Timer">
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="StartStopPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3rc-dP-vOP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
