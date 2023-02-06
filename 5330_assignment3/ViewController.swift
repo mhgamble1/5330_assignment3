@@ -64,6 +64,8 @@ class ViewController: UIViewController {
             timer.invalidate()
             timerOn = false
             print("play song")
+            
+            count = 60
             // set StartStopButton to "Start Timer"
             StartStopButton.setTitle("Start Timer", for: .normal)
             return
