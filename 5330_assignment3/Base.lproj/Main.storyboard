@@ -33,19 +33,19 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ije-Ff-oeJ" userLabel="VerticalStack2">
                                 <rect key="frame" x="0.0" y="109.33333333333331" width="377" height="708.66666666666674"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSR-pE-q6O" userLabel="HorizontalStack1">
-                                        <rect key="frame" x="0.0" y="0.0" width="377" height="195"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xSR-pE-q6O" userLabel="HorizontalStack1">
+                                        <rect key="frame" x="28.666666666666657" y="0.0" width="320" height="654"/>
                                         <subviews>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="q3j-eB-oz3">
-                                                <rect key="frame" x="0.0" y="0.0" width="377" height="195"/>
+                                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3j-eB-oz3">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="654"/>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fh7-Od-Hzw" userLabel="HorizontalStack2">
-                                        <rect key="frame" x="151" y="194.99999999999997" width="75" height="493.33333333333326"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh7-Od-Hzw" userLabel="HorizontalStack2">
+                                        <rect key="frame" x="151" y="654" width="75" height="34.333333333333371"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBK-fu-ExG">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="493.33333333333331"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBK-fu-ExG">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                             </button>
