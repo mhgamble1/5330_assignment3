@@ -47,22 +47,22 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fh7-Od-Hzw" userLabel="HorizontalStack2">
-                                        <rect key="frame" x="84.666666666666671" y="300" width="207.66666666666663" height="388.33333333333326"/>
+                                        <rect key="frame" x="134" y="300" width="109.33333333333331" height="388.33333333333326"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBK-fu-ExG">
-                                                <rect key="frame" x="0.0" y="0.0" width="207.66666666666666" height="388.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="109.33333333333333" height="388.33333333333331"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Start Timer / Stop Music">
+                                                <buttonConfiguration key="configuration" style="plain" title="Start Timer">
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNj-nh-2sg" userLabel="HorizontalStack3">
-                                        <rect key="frame" x="130" y="688.33333333333326" width="117.33333333333331" height="20.333333333333371"/>
+                                        <rect key="frame" x="88.000000000000014" y="688.33333333333326" width="201.33333333333337" height="20.333333333333371"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeRemaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtQ-Gb-OPb">
-                                                <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="20.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining: 00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtQ-Gb-OPb">
+                                                <rect key="frame" x="0.0" y="0.0" width="201.33333333333334" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -89,9 +89,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="DatePicker" destination="q3j-eB-oz3" id="vwB-X8-wQk"/>
                         <outlet property="DateTime" destination="8kd-M2-3dp" id="hBj-Hn-tu6"/>
                         <outlet property="StartStopButton" destination="tBK-fu-ExG" id="Mhg-P5-qLq"/>
-                        <outlet property="TimeRemaining" destination="PNj-nh-2sg" id="Ho0-ip-Slf"/>
+                        <outlet property="TimeRemaining" destination="ZtQ-Gb-OPb" id="JxE-Qp-QkG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

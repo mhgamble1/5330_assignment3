@@ -8,10 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // create a timer
-    var timer = Timer()
+    // create a CurrentTimer
+    var CurrentTimer = Timer()
+    var Countdown = Timer()
+    // create a variable to hold the time remaining
+    var remaining = 0
 
-    @IBOutlet weak var TimeRemaining: UIStackView!
+    @IBOutlet weak var DatePicker: UIDatePicker!
+    @IBOutlet weak var TimeRemaining: UILabel!
     @IBOutlet weak var StartStopButton: UIButton!
     @IBOutlet weak var DateTime: UILabel!
     override func viewDidLoad() {
@@ -23,7 +27,7 @@ class ViewController: UIViewController {
         // set the format to be like "Sun, 5 Feb 2023 12:34:56"
         formatter.dateFormat = "EEE, d MMM yyyy HH:mm:ss"
         DateTime.text = formatter.string(from: date)
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in self.updateDateTime() })
+        CurrentTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in self.updateDateTime() })
         // set the background image to day.jpg if it is day time and night.jpg if it is night time
         let hour = Calendar.current.component(.hour, from: date)
         if hour >= 6 && hour < 18 {
