@@ -6,21 +6,23 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
-    // create a CurrentTimer
+
     var CurrentTimer = Timer()
     var timer = Timer()
     var count: Int = 60
     var timerOn: Bool = false
+    var musicOn: Bool = false
 
     @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var TimeRemaining: UILabel!
     @IBOutlet weak var StartStopButton: UIButton!
     @IBOutlet weak var DateTime: UILabel!
     override func viewDidLoad() {
+
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         // set the date and time
         let date = Date()
         let formatter = DateFormatter()
@@ -39,7 +41,6 @@ class ViewController: UIViewController {
     }
 
     func updateDateTime() {
-        // set the date and time
         let date = Date()
         let formatter = DateFormatter()
         // set the format to be like "Sun, 5 Feb 2023 12:34:56"
@@ -48,13 +49,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func StartStopPressed(_ sender: Any) {
-        if !timerOn {
+        if !timerOn && !musicOn {
             timerOn = true
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        } else if !timerOn && musicOn{
+            musicOn = false
+            player.stop()
+            StartStopButton.setTitle("Start Timer", for: .normal)
         } else {
             timer.invalidate()
             timerOn = false
-            // set StartStopButton to "Stop Music"
             StartStopButton.setTitle("Stop Music", for: .normal)
         }
     }
@@ -64,10 +68,22 @@ class ViewController: UIViewController {
             timer.invalidate()
             timerOn = false
             print("play song")
-            // play song.mp3
-            
+            musicOn = true
+            var player: AVAudioPlayer?
+            guard let url = Bundle.main.url(forResource: "song", withExtension: "mp3") else { return }
+
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)            
+                try AVAudioSession.sharedInstance().setActive(true)
+
+                guard let player = player else { return }
+
+                player.play()
+
+            } catch let error {
+                print(error.localizedDescription)
+            }
             count = 60
-            // set StartStopButton to "Start Timer"
             StartStopButton.setTitle("Start Timer", for: .normal)
             return
         }
