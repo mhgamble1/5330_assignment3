@@ -55,6 +55,7 @@ class ViewController: UIViewController {
             timer.invalidate()
             timerOn = false
             // set StartStopButton to "Stop Music"
+            StartStopButton.setTitle("Stop Music", for: .normal)
         }
     }
 
@@ -64,6 +65,7 @@ class ViewController: UIViewController {
             timerOn = false
             print("play song")
             // set StartStopButton to "Start Timer"
+            StartStopButton.setTitle("Start Timer", for: .normal)
             return
         }
         count = count - 1
