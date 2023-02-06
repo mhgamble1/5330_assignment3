@@ -50,5 +50,9 @@ class ViewController: UIViewController {
     @IBAction func StartStopPressed(_ sender: Any) {
         print("StartStopPressed")
     }
+
+    @IBAction func DPChanged(_ sender: Any) {
+        print("DPChanged")
+    }
 }
 

@@ -39,6 +39,9 @@
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3j-eB-oz3">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="DPChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="KGd-Zh-9QS"/>
+                                                </connections>
                                             </datePicker>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
